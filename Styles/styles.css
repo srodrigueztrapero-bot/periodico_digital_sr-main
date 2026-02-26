@@ -49,7 +49,6 @@ img {
 .main-header > * {
     position: relative;
     overflow: hidden;
-    background-size: cover;
 }
 
 
@@ -71,11 +70,11 @@ img {
         transform: translateY(0);
     }
 }
-.form-tipos-inputs {
-    display: grid;
-    grid-template-columns: 1fr;
-}
 
+aside h2 {
+        text-align: center;
+
+}
 
 /* Accesibilidad */
 @media (prefers-reduced-motion: reduce) {
@@ -128,6 +127,7 @@ section {
 
 
 /* Articulo header movil */
+
 article > header {
     display: flex;
     flex-direction: column;
@@ -169,10 +169,108 @@ article footer p {
     margin: 0;
 }
 
+/* contacto */
+
+#Contacto {
+    width: 100%;
+    overflow: hidden;
+}
+
+#Contacto h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/*formulario*/
+
+.form-tipos-inputs {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    display: grid;
+    gap: 20px;
+}
+
+
+.input-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-demo.full-width {
+    width: 100%;
+}
+    
+ /*campos de formulario*/
+ 
+.form-tipos-inputs input,
+.form-tipos-inputs select,
+.form-tipos-inputs textarea {
+    padding: 12px;
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+
+}
+
+.form-tipos-inputs input:focus,
+.form-tipos-inputs select:focus,
+.form-tipos-inputs textarea:focus {
+    border-color: #e10600;
+    outline: none;
+    box-shadow: 0 0 8px rgba(225, 16, 0, 0.2);
+}
+
+/*checkbox*/
+
+.checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+}
+
+.checkbox input {
+    width: auto;
+}
+
+/*boton*/
+
+input[type="submit"], 
+input[type="button"] {
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+input[type="submit"] {
+    background-color: #e10600;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: #b30000;
+    transform: translateY(-3px);
+}
+
+input[type="button"] {
+    background-color: #222;
+    color: white;
+}
+
+input[type="button"]:hover {
+    background-color: #444;
+}
+
+
 /* versión tablet */
 @media (min-width: 768px) {
 
-    /* Header más grande */
+    
     .main-header {
         padding: 60px 40px;
     }
@@ -199,15 +297,10 @@ article footer p {
         text-align: left;
     }
 
-    article > header hgroup {
-        flex: 1;
-    }
-
     article > header figure {
         flex: 0 0 40%;
     }
 
-    /* Formulario en 2 columnas */
     .form-tipos-inputs {
         grid-template-columns: 1fr 1fr;
     }
@@ -269,12 +362,15 @@ article footer p {
         top: 20px;
         height: fit-content;
         grid-row: 1 / 4;
+        margin-left: auto;
+        text-align: center;
     }
 
     .secondary-news {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        align-self: start;
     }
 
     .secondary-news article {
@@ -283,7 +379,6 @@ article footer p {
         border-radius: 6px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
     }
 
     .secondary-news h1 {
@@ -294,6 +389,16 @@ article footer p {
         text-transform: none;
     }
 
+    .secondary-news article header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+
+    .secondary-news article h1,
+    .secondary-news article h2 {
+    margin: 0;
+    }
     .secondary-news p {
         font-size: 0.85rem;
     }
@@ -303,6 +408,7 @@ article footer p {
         height: 140px;
         object-fit: cover;
         margin-bottom: 10px;
+        margin-top: 0;
     }
     .secondary-news article footer {
         display: flex;
@@ -310,9 +416,11 @@ article footer p {
         align-items: flex-start;
         gap: 5px;
         font-size: 0.8rem;
+        margin-top: 0;
     }
 
     .secondary-news article > header {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
@@ -335,98 +443,3 @@ article footer p {
 
 }
 
-/* contacto */
-
-#Contacto {
-    width: 100%;
-    overflow: hidden;
-}
-
-#Contacto h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/*formulario*/
-
-.form-tipos-inputs {
-    background-color: #ffffff;
-    padding: 35px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.input-demo {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.input-demo.full-width {
-    width: 100%;
-}
-    
- /*campos de formulario*/
- 
-.form-tipos-inputs input,
-.form-tipos-inputs select,
-.form-tipos-inputs textarea {
-    padding: 12px;
-    border: 1px solid #ddd; 
-    border-radius: 8px;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
-
-}
-
-.form-tipos-inputs input:focus,
-.form-tipos-inputs select:focus,
-.form-tipos-inputs textarea:focus {
-    border-color: #e10600;
-    outline: none;
-    box-shadow: 0 0 8px rgba(225, 16, 0, 0.2);
-}
-
-/*checkbox*/
-
-.checkbox {
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-
-.checkbox input {
-    width: auto;
-}
-
-/*boton*/
-
-input[type="submit"], 
-input[type="button"] {
-    cursor: pointer;
-    border: none;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-input[type="submit"] {
-    background-color: #e10600;
-    color: white;
-}
-
-input[type="submit"]:hover {
-    background-color: #b30000;
-    transform: translateY(-3px);
-}
-
-input[type="button"] {
-    background-color: #222;
-    color: white;
-}
-
-input[type="button"]:hover {
-    background-color: #444;
-}
